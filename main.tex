@@ -1,0 +1,52 @@
+ \input{commands.tex}
+% Standardseitenstil ebenfalls auf 'plain' setzen
+
+\begin{document}
+\include{include/title.tex}
+\cleardoublepage
+\include{include/change_record}
+
+% Frontmatter
+\pagenumbering{roman}
+\setcounter{page}{3}
+\include{include/abstract}
+\clearpage
+\tableofcontents
+\thispagestyle{noheader}
+\clearpage
+\listoftables
+\addcontentsline{toc}{section}{\listtablename}
+\thispagestyle{noheader}
+\clearpage
+\listoffigures
+\addcontentsline{toc}{section}{\listfigurename}
+\thispagestyle{noheader}
+\clearpage
+\include{include/symbols}
+\printnomenclature
+\addcontentsline{toc}{section}{Nomenclature}
+\thispagestyle{noheader}
+\clearpage
+\include{include/abbreviations}
+\thispagestyle{noheader}
+\cleardoublepage
+
+% Mainmatter
+\pagestyle{plain}
+\pagenumbering{arabic}
+\include{sections/introducion}
+\include{sections/project_planning}
+\include{sections/engine_description}
+\include{sections/test_stand_description}
+\include{sections/test_campaign_preperations}
+\include{sections/data_analysis}
+
+% Backmatter
+\appendix
+\printbibliography
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{11}
+\include{include/appendix}
+
+\end{document}
